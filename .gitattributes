@@ -1,0 +1,3 @@
+# Preserve the original ACM support files byte for byte, including upstream whitespace.
+paper/acmart.cls whitespace=-trailing-space
+paper/ACM-Reference-Format.bst whitespace=-trailing-space
