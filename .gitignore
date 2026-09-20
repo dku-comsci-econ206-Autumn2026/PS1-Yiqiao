@@ -7,3 +7,21 @@
 main.pdf
 __pycache__/
 .DS_Store
+
+# Final v2 local environments and generated files
+*.pyc
+.venv/
+.venv-demo/
+venv/
+env/
+.ipynb_checkpoints/
+*.toc
+*.synctex.gz
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+paper/build/
+paper/field_trip/PROVENANCE_LOCAL.md
+submission/

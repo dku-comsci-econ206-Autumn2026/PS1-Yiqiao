@@ -1,0 +1,25 @@
+\section{Historical Review and Revision Record}
+\label{app:review}
+\subsection{Review-process status}
+The original PS1 v1 studied AI attention and interruption scheduling. One accessible peer review concerns that earlier topic. It is retained as historical review-process evidence, not treated as direct evaluation of the v2 information-acquisition model. One assigned peer review is currently inaccessible to the author. Its substantive content has not been incorporated into this v2 revision. Neither review's substantive contents are quoted, summarized, or inferred here.
+
+\subsection{Major revision decision}
+The topic change was the author's own research decision and is not attributed to either reviewer. Although v1 included multiple agents, they mainly submitted information to an attention coordinator. Direct strategic interdependence between two decision makers was not sufficiently central or explicit: one player's best action was not cleanly defined by the other's action. In v2, two players choose Research or Skip, their payoffs depend on both choices, and best responses and equilibrium organize the economics, reproducible computation, and a future behavioral comparison.
+
+\subsection{Objective v1-to-v2 revision record}
+\begin{table}[H]
+\caption{Objective development record; no reviewer-specific cause is inferred.}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.19\textwidth}p{0.19\textwidth}p{0.22\textwidth}Y@{}}
+\toprule
+Earlier state & Revision & Reason & Evidence / verification & Affected artifact\\\midrule
+Attention/interruption scheduling & Costly information-acquisition game & Make direct strategic interdependence central & Current formal model & Research model, paper\\
+Agents mainly submitted to a coordinator & Two players directly choose Research or Skip & Make each best response depend on the other player's action & Payoff matrices and independent best-response analysis & \texttt{src/}, \texttt{tests/}\\
+Economics was not sufficiently central to scheduling & Private cost and shared benefit create free-riding & Make incentives and equilibrium core & Verified Nash equilibria & Model, outputs\\
+Two pure equilibria initially predicted for v2 & NashPy identified an additional mixed equilibrium & Check the full baseline equilibrium structure & \texttt{baseline\_equilibria.json} and analytical cross-check & Notebook, outputs\\
+No current-topic interactive artifact & Public Static Space & Make the formal game inspectable & Live app and Python--JavaScript parity & \texttt{deployment/}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Response status}
+One accessible review evaluates the superseded v1 topic and is retained as historical review-process evidence. Another assigned review is currently inaccessible to the author; therefore no substantive response to unavailable content is claimed. Any course-required Human-Only response remains to be completed by the author if the material becomes available or the instructor gives alternative instructions.

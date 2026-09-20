@@ -1,60 +1,52 @@
-# COMSCI/ECON 206 PS1 Overleaf template
+# Who Pays to Know?
+Strategic Information Acquisition Before AI Collective Decisions
 
-Individual research proposal · Computational Microeconomics · Autumn 2026 Session 1 · Instructor Prof. Luyao Zhang
+**Author:** Yiqiao Liu (Mickey)
 
-Fork this repository, import your fork into Overleaf, and develop Intellectual Statement II into your own research proposal. The starter includes all current PS1 revisions and a compiled preview.
+**Course:** COMSCI/ECON 206 — Computational Microeconomics, Autumn 2026 Session 1
 
-## Start in your own account
+This is the final PS1 v2 research proposal and reproducibility project. The author replaced the earlier attention/interruption topic with a two-agent game of costly information acquisition before a collective AI decision.
 
-1. **Fork** this repo to your own personal account. Create the fork under your own GitHub account.
-2. If you have Overleaf GitHub synchronization, link your GitHub account in Overleaf Account Settings. From the Overleaf dashboard choose **New project → GitHub repo**, select **your fork**, then **Import to Overleaf**.
-3. Otherwise, in your fork choose **Code → Download ZIP**. In Overleaf choose **New project → Upload Project** and upload that ZIP. This route does not require GitHub synchronization.
-4. Set the main document to `main.tex`, compiler to **pdfLaTeX**, and use the current available TeX Live environment. Recompile; a bibliography refresh may need another pass.
-5. Replace your name, email and course/workshop fields in `main.tex`. Write your proposal in `sections/proposal.tex`; complete Author Notes and Appendices A–E in `appendices/supporting.tex`.
-6. Keep your own GitHub fork and Overleaf source consistent. GitHub synchronization requires an explicit push or pull; it is not automatic. For a ZIP import, copy final source changes back to your fork manually.
-7. Submit the PDF and source ZIP on Canvas, with your code snapshot and artifact links. The template repository is not the Canvas submission channel.
+## Final paper and source
 
-GitHub synchronization is an Overleaf premium feature, including access supplied through eligible institutional or group plans. Official instructions: [Overleaf GitHub synchronization](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization). The ZIP route is a separate usable starting path.
+The **root `main.tex`** is the final ACM paper for course/Overleaf use. Its root `sections/`, `appendices/`, `figures/`, `field_trip/`, bibliography, and ACM support files form the synchronized final paper source. Figure 1 has an editable Draw.io master and vector PDF. The root paper includes five numbered sections, Author Notes, Appendices A–E, the field-trip photographs, AI-use disclosure, Open Science statement, and SDG statement.
 
-## Main paper and supporting material
+`paper/` is a byte-identical development and validation copy of the same 24-file Overleaf package. The project scripts build and validate this copy. At integration finalization, every file from the authoritative Overleaf source ZIP was compared byte for byte with both root and `paper/`; do not edit one copy without synchronizing the other. See `docs/course_integration.md` for the source and preservation audit.
 
-Keep five numbered sections within two main pages: three connected questions; economic answer; computational answer; behavioral answer; advanced development and future directions. Include the title, metadata, teaser, captions and contribution statements in that limit. References, Author Notes and appendices are unlimited supporting pages.
+## Research question and verified baseline
 
-- `main.tex`: identity, title, class metadata, teaser and source includes.
-- `sections/proposal.tex`: five sections, the Expected 2056 Nobel Prize and Turing Award contribution statement, Open Science Statement, and Statement of Contribution to the UN's SDGs.
-- `appendices/supporting.tex`: acknowledgements, individual contribution, references, technical/AI disclosure, cumulative development, dated field record, review response and Appendix E abstract table.
-- `figures/ps1_teaser.drawio`: native editable example from the class LLM proposal. All labels, icons and connectors are editable. Replace or adapt it to your research.
-- `figures/ps1_teaser.pdf` and `.svg`: vector exports. Keep the caption, `\Description` and main-text references aligned with your edited figure.
-- `preview.pdf`: compiled starter, two main pages plus supporting pages. Compile `main.tex` after editing; this preview is not automatically updated by Overleaf.
-- `instructions/`: assignment, concise review/grading guide, simple form and submission roadmap.
-- `scaffolding/`: optional prompts and the Appendix E table source.
+When information is costly but collectively valuable, when will decision makers research rather than free-ride, and how might future observed choices compare with the formal benchmark? The behavioral comparison remains untested.
 
-## Required attribution and intellectual development
+Agents A and B each choose **Research (R)** or **Skip (S)**. If either researches, each receives information value **V**; each researcher privately pays **c**. The baseline is **V = 4, c = 2**.
 
-Record the **2056 Nobel and Turing Laureate Program Launch Workshop**, September 7, 2026, Duke Kunshan University, IB 2050. Program Chair: **Prof. Luyao Zhang**. Program Discussant: **Prof. Ken Rogerson**. Identify your assigned session, role and two actual teammates, and acknowledge the rest of the class. Explain real changes prompted by feedback.
+| Agent A / Agent B | Research | Skip |
+| --- | --- | --- |
+| **Research** | (2, 2) | (2, 4) |
+| **Skip** | (4, 2) | (0, 0) |
 
-For the September 4, 2026 field trip, use the exact visited site names **Tencent Shanghai Office** and **Shanghai Science and Technology Museum** and retain the earlier industry/public-sector photographs with dates and provenance. Describe actual attendance and observations accurately.
+The author initially predicted (R,S) and (S,R) as pure Nash equilibria. Independent best-response enumeration and NashPy verified both; the symmetric mixed equilibrium has p(Research) = 0.5. The V = 4 cost sweep checks c = 0 through 5. These are formal-model results, not observations of people or AI agents.
 
-Appendix E retains the eight-row cumulative proposal map. The main roadmap connects cited laureate foundations, an enduring human question, today's distinctive environment and technology, and new economics/computer-science/behavioral-science contributions. The 2056 statement is an aspiration supported by milestones, not a prediction of an award.
+## Public artifacts
 
-## Optional computational pilot
+- [Final development and reproducibility branch](https://github.com/micL1222/PS1-Yiqiao/tree/v2-information-acquisition)
+- [GitHub-backed Colab notebook](https://colab.research.google.com/github/micL1222/PS1-Yiqiao/blob/v2-information-acquisition/notebooks/information_acquisition_baseline.ipynb) (executed locally; hosted Colab runtime not independently checked)
+- [Author-uploaded Hugging Face Static Space](https://huggingface.co/spaces/dku-comsci-econ206-2026/who-pays-to-know)
+- [Verified scientific artifact commit `b986771d1e79979825cd375c8ed663994bdc67ec`](https://github.com/micL1222/PS1-Yiqiao/commit/b986771d1e79979825cd375c8ed663994bdc67ec)
 
-[Open the synthetic classroom pilot in Google Colab](https://colab.research.google.com/github/sunshineluyao/ps1-overleaf-template/blob/main/companion/notebooks/06_ps1_strategic_reasoning_demo.ipynb). It is self-contained; no LLM API key is needed. The notebook's setup cell installs the documented scientific packages. It demonstrates one coordination game and a pedagogical logit cognitive hierarchy.
+The final Static Space source is `deployment/huggingface-static/`. Its browser-side game logic is checked against the trusted Python model by `scripts/validate_static_space.py`. `deployment/huggingface/` records an earlier, unsuccessful Gradio deployment preparation.
 
-The in-class sample homework reconstructs Jia et al. (NeurIPS 2025), *LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory*, prospectively: 22 LLMs, 13 settings, 30 baseline trials. This optional pilot is a much smaller synthetic illustration, not that experiment. Its precision rule is gamma**k; the paper's TQRE specification is gamma*k. Do not relabel its synthetic outputs as empirical LLM findings.
+## Reproducibility and evidence limits
 
-For local use, enter `companion/`, install `requirements.txt`, and run `python -m unittest discover -s tests`. Open `companion/hf_space/index.html` with `model.js` beside it to try the game, or upload the Space folder to Hugging Face. No hosted Space URL is claimed here.
+After installing the dependencies described by `requirements.txt` and `demo/requirements.txt` in local `.venv` and `.venv-demo` environments, run:
 
-Put **your project GitHub and Colab URLs** in the Open Science Statement. Put **your Hugging Face URL** in the Statement of Contribution to the UN's SDGs and explain a specific SDG 4 Quality Education learning use. Distinguish released materials from benefits awaiting evaluation.
+```bash
+./scripts/verify_all.sh
+```
 
-## Submission and review
+This runs the Python tests, notebook, research validator, static-model parity check, citation and claim audits, and local paper checks. The `src/`, `notebooks/`, `tests/`, `outputs/`, `scripts/`, `docs/`, `demo/`, and `deployment/` directories contain the final project's implementation and provenance. Behavioral experiment: not conducted. Human experiment: not conducted. Educational effectiveness has not been evaluated. Final authoritative Overleaf compilation and Canvas submission remain the author's manual steps.
 
-First draft: Sunday **September 13, 2026, 11:00 P.M. Beijing time UTC+8**. Peer review: Monday September 14 in class. Proposed later deadlines: response September 16; reviewer follow-up September 17; v2 September 20, each at 11:00 P.M. Beijing time.
+## Course Template Provenance
 
-Reviewers answer only three prompts: what do you appreciate; what do you criticize constructively; what questions could improve scientific communication? The optional scaffolding is separate. The instructor grades the full process: 60 research + 15 review + 10 response + 15 revision. A complete, sound, rerunnable portfolio reaching the **Stellar Scholarship Threshold** of 70/100 research quality earns all 60 research points; the other 40 require process contributions.
+This project adapts the [COMSCI/ECON 206 PS1 Overleaf starter](https://github.com/sunshineluyao/ps1-overleaf-template). The course `instructions/`, `companion/`, `scaffolding/`, `.gitattributes`, `acmart.dtx`, and `acmart.ins` are retained for provenance and reference. The final paper uses the supplied ACM class and bibliography style. Course and ACM template materials are not claimed as the author's original work.
 
-Initial reasoning, handwritten reflection and peer reviews are Human-Only. AI-Assisted drafting and debugging follow independent reasoning and require disclosure and human verification.
-
-## Attribution and reuse
-
-Students may fork and adapt the course starter for this assignment, acknowledging sources and preserving third-party terms. The genuine ACM class and bibliography style files retain their original notices; see `acmart.dtx`, `acmart.ins`, `acmart.cls` and `ACM-Reference-Format.bst`. No claim is made that all cited papers or third-party assets are covered by a new blanket license. State actual reuse terms for your own research artifacts.
+OpenAI Codex assisted with implementation, drafting, checking, and Static Space source preparation. The author made the research decisions and manually uploaded the final Static Space. See `AI_USE_LOG.md` and Appendix A.1 of the paper for disclosure.
